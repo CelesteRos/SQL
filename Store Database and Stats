@@ -1,0 +1,30 @@
+CREATE table Store (ID integer primary key, Item text, Color text, Quantity integer, Price integer);
+
+INSERT into store VALUES (1, 'Basic Top', 'Beige', 6, 24.99);
+INSERT into store VALUES (2, 'Skirt', 'Brown', 4, 45.99);
+INSERT into store VALUES (3, 'Pants', 'Black', 9, 32.99);
+INSERT into store VALUES (4, 'Leggings', 'Black', 7, 14.99);
+INSERT into store VALUES (5, 'Sneakers', 'White', 2, 59.99);
+INSERT into store VALUES (6, 'Bag', 'Blue', 10, 62.99);
+INSERT into store VALUES (7, 'Ring', 'Gold', 14, 79.99); 
+INSERT into store VALUES (8, 'Necklace', 'Silver', 10, 79.99);
+INSERT into store VALUES (9, 'Sandals', 'Black', 4, 59.99);
+INSERT into store VALUES (10, 'Bracelet', 'Gold', 14, 79.99);
+INSERT into store VALUES (11, 'Dress', 'Yelow', 2, 18.99);
+INSERT into store VALUES (12, 'Blouse', 'Multi', 22, 17.99);
+INSERT into store VALUES (13, 'Socks', 'White', 15, 5.99);
+INSERT into store VALUES (14, 'Boots', 'Beige', 6, 59.99);
+INSERT into store VALUES (15, 'Wallet', 'Beige', 6, 69.99);
+
+-- Items ordered by price
+SELECT * FROM store
+ORDER by price asc;
+
+-- What are the items under $40?
+SELECT * FROM store 
+WHERE price <= 40;
+
+-- Top 5 items with the most quantities in stock?
+SELECT item, quantity FROM store
+ORDER BY quantity desc
+LIMIT 5; 
